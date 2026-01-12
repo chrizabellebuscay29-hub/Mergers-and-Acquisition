@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mergers and Acquisitions in Philippines</title>
+    <style>
+        /* (Styles preserved except carousel adjustments) */
+
+        :root{
+            --bg-1: #f6fbff;
+            --accent-dark: #0d47a1;
+            --accent: #1976d2;
+            --accent-2: #5c6bc0;
+            --card: #ffffff;
+            --muted: #56606b;
+            --glass: rgba(255,255,255,0.65);
+            --radius: 12px;
+            --max-width: 1200px;
+            --glass-border: rgba(15,23,42,0.03);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html,body { height: 100%; margin: 0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+        img { display:block; max-width:100%; height:auto; }
+
+        body {
+            background: linear-gradient(135deg, #eaf6ff 0%, #f6eafc 100%);
+            color: #222;
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+            color: #fff;
+            padding: 22px 16px;
+            box-shadow: 0 6px 18px rgba(10,25,60,0.12);
+            position: sticky;
+            top: 0;
+            z-index: 60;
+        }
+        header .inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        header h1 { margin: 0; font-size: 1.1rem; letter-spacing: 0.2px; }
+        .nav-buttons {
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+        .nav-buttons button {
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform .12s ease, background .12s ease;
+        }
+        .nav-buttons button:hover,
+        .nav-buttons button:focus {
+            transform: translateY(-2px);
+            background: rgba(255,255,255,0.18);
+            outline: none;
+        }
+
+        .section {
+            padding: 24px;
+            max-width: var(--max-width);
+            margin: 24px auto;
+            box-sizing: border-box;
+        }
+
+        #home {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqCYD7JXVYOEkyGoWiXWToraDSCi9B00QEg&s);
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 64px 20px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(13,71,161,0.14);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            min-height: 320px;
+        }
+        #home h1 {
+            margin:0;
+            font-size: 1.45rem;
+            line-height:1.2;
+            max-width: 1100px;
+            text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+            padding: 12px 18px;
+            background: linear-gradient(180deg, rgba(13,71,161,0.6), rgba(25,118,210,0.45));
+            border-radius: 10px;
+        }
+
+        #about {
+            background: linear-gradient(135deg, #bbdefb, #90caf9);
+            border-radius: 12px;
+            padding: 26px;
+            box-shadow: 0 8px 24px rgba(30,64,120,0.06);
+            margin-top: 18px;
+            position: relative;
+            overflow: visible;
+        }
+        #about h1 {
+            color: #0f4ea4;
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+
+        .subsection {
+            margin: 22px 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(10,20,40,0.06);
+            border-left: 4px solid var(--accent);
+        }
+        .subsection h2 { color: var(--accent); margin-top: 0; display:flex; align-items:center; gap:10px; }
+
+        .heading-icon {
+            width:36px;
+            height:36px;
+            display:inline-grid;
+            place-items:center;
+            border-radius:8px;
+            background: linear-gradient(180deg, rgba(25,118,210,0.12), rgba(92,107,192,0.08));
+            color: var(--accent-dark);
+            font-weight:700;
+            flex-shrink:0;
+        }
+
+        .insights {
+            display:flex;
+            gap:12px;
+            margin: 14px 0;
+            flex-wrap:wrap;
+            justify-content:flex-start;
+        }
+        .insight-card {
+            background: linear-gradient(180deg,#ffffff,#fbfdff);
+            border-radius:10px;
+            padding:12px 14px;
+            box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+            border: 1px solid var(--glass-border);
+            display:flex;
+            gap:12px;
+            align-items:center;
+            min-width: 220px;
+        }
+        .insight-card .icon {
+            width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;display:grid;place-items:center;font-weight:700;font-size:18px;
+        }
+        .insight-card .meta { font-weight:700; color:var(--accent-dark) }
+        .insight-card .sub { font-size:0.9rem; color:var(--muted) }
+
+        /* ---------- Carousel adjustments ---------- */
+        .carousel {
+            display:block;
+            overflow:hidden;
+            width:100%;
+            height: 320px;
+            border-radius: 10px;
+            position: relative;
+            background: linear-gradient(180deg,#f6fbff,#eef6ff);
+            box-shadow: inset 0 -40px 60px rgba(0,0,0,0.02);
+        }
+        .carousel-track {
+            display:flex;
+            height:100%;
+            transition: transform 0.6s cubic-bezier(.2,.9,.2,1);
+            will-change: transform;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background: #fff;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display:block;
+        }
+        .carousel .controls {
+            position:absolute;
+            top:50%;
+            left:0;
+            right:0;
+            transform: translateY(-50%);
+            display:flex;
+            justify-content:space-between;
+            pointer-events:none;
+            padding: 0 12px;
+        }
+        .carousel .controls button {
+            pointer-events:auto;
+            background: rgba(0,0,0,0.45);
+            border: none;
+            color: #fff;
+            width:44px;
+            height:44px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:20px;
+            display:grid;
+            place-items:center;
+            transition: background .12s, transform .08s;
+        }
+        .carousel .controls button:hover { transform: translateY(-3px); background: rgba(0,0,0,0.6); }
+
+        .dots {
+            display:flex;
+            gap:8px;
+            justify-content:center;
+            margin-top:12px;
+        }
+        .dot {
+            width:10px;
+            height:10px;
+            border-radius:50%;
+            background: rgba(0,0,0,0.12);
+            cursor:pointer;
+            border:1px solid rgba(255,255,255,0.6);
+        }
+        .dot.active { background: var(--accent); box-shadow: 0 6px 18px rgba(25,118,210,0.18); }
+        /* ---------- end carousel adjustments ---------- */
+
+        .subsection ul {
+            padding-left: 18px;
+            list-style: none;
+            margin: 0;
+        }
+        .subsection li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+        }
+        .subsection li::before {
+            content: '🔹';
+            position:absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(2px);
+        }
+
+        #contact {
+            background: linear-gradient(135deg, #c5cae9, #9fa8da);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 18px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            align-items: start;
+            justify-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 8px;
+        }
+        .author {
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            background-color: #fff;
+            padding:18px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(10,20,40,0.06);
+            border-top: 4px solid rgba(92,107,192,0.8);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:8px;
+        }
+        .author img {
+            width:110px;
+            height:110px;
+            object-fit:cover;
+            border-radius:50%;
+            margin-bottom: 6px;
+            border: 3px solid rgba(48,63,159,0.95);
+        }
+        .author h3 { color: #24365f; margin:6px 0; }
+        .author p { margin:4px 0; color:#666; font-size:0.95rem; }
+
+        footer {
+            background: linear-gradient(90deg, var(--accent), #42a5f5);
+            color: #fff;
+            text-align: center;
+            padding: 14px;
+            margin-top: 18px;
+            box-shadow: 0 -4px 12px rgba(10,20,40,0.06);
+            border-radius: 6px;
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .callout {
+            display:flex;
+            gap:12px;
+            align-items:flex-start;
+            background: linear-gradient(180deg,#fff,#fbfdff);
+            padding:12px;
+            border-radius:10px;
+            border:1px solid var(--glass-border);
+            box-shadow: 0 8px 20px rgba(15,23,42,0.03);
+            margin-top:12px;
+        }
+        .callout .label {
+            width:44px;
+            height:44px;
+            display:grid;
+            place-items:center;
+            background: linear-gradient(135deg,var(--accent-2),var(--accent));
+            color:white;
+            border-radius:8px;
+            font-weight:700;
+        }
+        .callout .text { color:var(--muted); font-weight:600; }
+
+        @media (max-width: 960px) {
+            .carousel { height: 260px; }
+            .author { max-width: 420px; }
+            .insights { justify-content:center; }
+        }
+        @media (max-width: 640px) {
+            header .inner { flex-direction: column; align-items: flex-start; gap:10px; }
+            .nav-buttons { width:100%; justify-content:flex-start; }
+            #home { padding: 40px 16px; min-height: 240px; }
+            .carousel { height: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <h1>Mergers and Acquisitions in Philippines</h1>
+            <div class="nav-buttons" role="navigation" aria-label="Main navigation">
+                <button onclick="scrollToSection('home')">Home</button>
+                <button onclick="scrollToSection('about')">About</button>
+                <button onclick="scrollToSection('contact')">Contact</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="home" class="section">
+            <h1>MERGERS AND ACQUISITIONS IN PHILIPPINES: A STRATEGIC IMPACT ANALYSIS FOR THE PUBLICLY LISTED COMPANIES IN PHILIPPINE STOCK EXCHANGE</h1>
+        </div>
+
+        <div id="about" class="section">
+            <h1>About the Study</h1>
+
+            <div class="subsection" id="results">
+                <h2><span class="heading-icon">R</span>Results</h2>
+
+                <!-- Updated carousel structure: each image wrapped in .carousel-slide -->
+                <div class="carousel" id="imageCarousel" aria-roledescription="carousel" aria-label="Study results carousel">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Wrap images inside slide containers -->
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture1.png" alt="Result 1"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture2.png" alt="Result 2"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture3.png" alt="Result 3"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture6.png" alt="Result 4"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture7.png" alt="Result 5"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture8.png" alt="Result 6"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture9.png" alt="Result 7"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/thesis/Picture10.png" alt="Result 8"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/ITR%20PRE.png" alt="Result 9"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/PAT%20PRE.png" alt="Result 10"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/BVPS%20PRE.png" alt="Result 11"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/RONW%20PRE.png" alt="Result 12"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/ITR%20POST.png" alt="Result 13"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/PAT%20POST.png" alt="Result 14"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/BVPS%20POST.png" alt="Result 15"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Downloads/RONW%20POST.png" alt="Result 16"></div>
+                        <div class="carousel-slide"><img src="C:/Users/hp/Pictures/Screenshots/Screenshot%202026-01-11%20231136.png" alt="Result 17"></div>
+                    </div>
+
+                    <div class="controls" aria-hidden="false">
+                        <button id="prevBtn" aria-label="Previous slide">‹</button>
+                        <button id="nextBtn" aria-label="Next slide">›</button>
+                    </div>
+                </div>
+                <div class="dots" id="carouselDots" aria-hidden="false" style="margin-top:12px;"></div>
+
+                <div class="insights" aria-hidden="false">
+                    <div class="insight-card" role="region" aria-label="Quick insight: sample size">
+                        <div class="icon">11</div>
+                        <div>
+                            <div class="meta">Sample</div>
+                            <div class="sub">11 publicly listed companies</div>
+                        </div>
+                    </div>
+
+                    <div class="insight-card" role="region" aria-label="Quick insight: period">
+                        <div class="icon">10</div>
+                        <div>
+                            <div class="meta">Period</div>
+                            <div class="sub">5 years pre- and 5 years post-merger</div>
+                        </div>
+                    </div>
+
+                    <div class="insight-card" role="region" aria-label="Quick insight: main takeaway">
+                        <div class="icon">⚖</div>
+                        <div>
+                            <div class="meta">Main takeaway</div>
+                            <div class="sub">No statistically significant impact across chosen indicators</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- (rest of the content unchanged) -->
+            <div class="subsection" id="findings">
+                <h2><span class="heading-icon">F</span>Findings</h2>
+                <div class="callout" role="note" aria-label="Findings callout">
+                    <div class="label">✓</div>
+                    <div class="text">Key patterns are visualized above — fluctuations exist but statistical tests did not show significant post-merger improvements.</div>
+                </div>
+
+                <ul>
+                    <li>The analysis of eleven publicly listed Philippine companies shows that Inventory Turnover Ratio (ITR) exhibited fluctuations across the pre- and post-merger periods, but no statistically significant improvement was observed after mergers and acquisitions.</li>
+                    <li>Profit After Tax (PAT) increased in some post-merger years; however, the paired t-test results indicate that these changes were not statistically significant, suggesting limited financial gains attributable to M&A activities.</li>
+                    <li>Book Value per Share (BVPS) demonstrated a gradual upward trend over time, reflecting asset growth, yet the difference between pre- and post-merger periods remained statistically insignificant.</li>
+                    <li>Return on Net Worth (RoNW) showed moderate variation across years, but results confirm that mergers and acquisitions did not significantly enhance shareholder profitability.</li>
+                    <li>Overall, the empirical results reveal that mergers and acquisitions did not produce a statistically significant strategic or financial impact on the selected performance indicators during the post-liberalization period.</li>
+                </ul>
+            </div>
+
+            <div class="subsection" id="summary">
+                <h2><span class="heading-icon">S</span>Summary</h2>
+                <div class="callout" role="note" aria-label="Summary callout">
+                    <div class="label">ℹ</div>
+                    <div class="text">This quick snapshot highlights study design and approach — use the visual cards above to orient before reading detailed summaries below.</div>
+                </div>
+
+                <ul>
+                    <li>The study examines the strategic impact of mergers and acquisitions (M&A) on publicly listed Philippine companies by comparing pre-merger and post-merger financial performance.</li>
+                    <li>It evaluates M&A impact using four key indicators: Inventory Turnover Ratio (ITR), Profit After Tax (PAT), Book Value per Share (BVPS), and Return on Net Worth (RoNW) to assess operational efficiency, profitability, and shareholder value.</li>
+                    <li>The research tests the null hypothesis that there is no significant difference in firms’ financial performance during the five years before and five years after the M&A event.</li>
+                    <li>An ex post facto research design is employed, utilizing secondary data from audited financial statements and annual reports of eleven (11) publicly listed companies on the Philippine Stock Exchange.</li>
+                    <li>Data covering a 10-year period (5 pre-M&A and 5 post-M&A) were analyzed using SPSS, applying descriptive statistics, paired sample t-tests, and trend analysis, with findings interpreted alongside relevant M&A literature.</li>
+                </ul>
+            </div>
+
+            <div class="subsection" id="conclusion">
+                <h2><span class="heading-icon">C</span>Conclusion</h2>
+
+                <div class="callout" role="note" aria-label="Conclusion callout">
+                    <div class="label">⚠</div>
+                    <div class="text">M&A outcomes vary — the transaction alone isn't a guarantee of improved financial performance; integration and firm-specific factors matter.</div>
+                </div>
+
+                <ul>
+                    <li>Mergers and acquisitions among publicly listed Philippine companies did not result in statistically significant improvements in inventory efficiency, profitability, or shareholder value.</li>
+                    <li>The absence of significant differences implies that the expected synergies from M&A activities may take longer to materialize or may be influenced by external factors.</li>
+                    <li>Financial performance indicators alone may be insufficient to fully capture the strategic impact of mergers and acquisitions.</li>
+                    <li>The business environment provided opportunities for corporate restructuring through mergers and acquisitions; however, the outcomes varied across firms, indicating that M&A effectiveness depends on firm-specific conditions and execution.</li>
+                    <li>Strategic success following mergers depends not only on the transaction itself but also on post-merger integration and management effectiveness.</li>
+                </ul>
+            </div>
+
+            <div class="subsection" id="recommendations">
+                <h2><span class="heading-icon">R</span>Recommendations</h2>
+
+                <div class="callout" role="note" aria-label="Recommendations callout">
+                    <div class="label">→</div>
+                    <div class="text">Practical next steps: focus on post-merger integration, broaden evaluation metrics, and extend study horizons for deeper insights.</div>
+                </div>
+
+                <ul>
+                    <li>Companies planning mergers and acquisitions should place greater emphasis on post-merger integration strategies to realize potential performance gains.</li>
+                    <li>Management should complement financial indicators with operational and strategic performance measures when evaluating M&A success.</li>
+                    <li>Policymakers and regulators may consider providing guidelines or support mechanisms to improve post-merger performance sustainability.</li>
+                    <li>Investors should exercise caution and avoid assuming automatic financial improvements following M&A announcements.</li>
+                    <li>Future studies are encouraged to extend the analysis by incorporating longer post-merger periods, qualitative factors, and industry-specific variables.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="contact" class="section">
+            <h1 style="text-align:center;margin-top:0;">Contact the Authors</h1>
+
+            <div class="contact-grid" role="list" aria-label="Authors list">
+                <div class="author" role="listitem">
+                    <img src="C:/Users/hp/Downloads/14741113-ab74-414e-9968-5548e2eaac93.jfif" alt="Author 1">
+                    <h3>Amboy, Gepherson D.</h3>
+                    <p>Email: amboygepherson@gmail.com</p>
+                    <p>Facebook: Gepherson D. Amboy</p>
+                </div>
+
+                <div class="author" role="listitem">
+                    <img src="C:/Users/hp/Downloads/4cb2a0c4-c8fc-46cc-b800-2762b964a276.jfif" alt="Author 2">
+                    <h3>Madregallo, Eldwin James L.</h3>
+                    <p>Email: madregalloejay@gmail.com</p>
+                    <p>Facebook: Ejay Madregallo</p>
+                </div>
+
+                <div class="author" role="listitem">
+                    <img src="C:/Users/hp/Downloads/46a268d9-5388-4c38-b582-ab9755173a20.jfif" alt="Author 3">
+                    <h3>Morta, Jovan S.</h3>
+                    <p>Email: jovanmorta112103@gmail.com</p>
+                    <p>Facebook: Jovan Suarez Morta</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mergers and Acquisitions Study. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (!section) return;
+            const header = document.querySelector('header');
+            const headerHeight = header ? header.getBoundingClientRect().height : 0;
+            const top = window.scrollY + section.getBoundingClientRect().top - headerHeight - 12;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+
+        // Carousel: percentage-based translation; uses .carousel-slide containers
+        (function () {
+            const carousel = document.getElementById('imageCarousel');
+            if (!carousel) return;
+
+            const track = document.getElementById('carouselTrack');
+            const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('carouselDots');
+
+            if (!track || slides.length === 0) return;
+
+            slides.forEach((slide, idx) => {
+                const dot = document.createElement('button');
+                dot.className = 'dot';
+                dot.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+                dot.addEventListener('click', () => goTo(idx));
+                dotsContainer.appendChild(dot);
+            });
+            const dots = Array.from(dotsContainer.children);
+
+            let index = 0;
+            const slideCount = slides.length;
+            let autoId = null;
+            const AUTO_MS = 3000;
+
+            function update() {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === index));
+            }
+
+            function goTo(i) {
+                index = (i + slideCount) % slideCount;
+                update();
+                resetAuto();
+            }
+            function next() { goTo(index + 1); }
+            function prev() { goTo(index - 1); }
+
+            if (nextBtn) nextBtn.addEventListener('click', next);
+            if (prevBtn) prevBtn.addEventListener('click', prev);
+
+            function startAuto() {
+                stopAuto();
+                autoId = setInterval(next, AUTO_MS);
+            }
+            function stopAuto() { if (autoId) { clearInterval(autoId); autoId = null; } }
+            function resetAuto() { stopAuto(); startAuto(); }
+
+            carousel.addEventListener('mouseenter', stopAuto);
+            carousel.addEventListener('mouseleave', startAuto);
+            carousel.addEventListener('focusin', stopAuto);
+            carousel.addEventListener('focusout', startAuto);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowRight') next();
+                if (e.key === 'ArrowLeft') prev();
+            });
+
+            // Ensure slides are sized via CSS (min-width:100%) so no pixel math required.
+            update();
+            startAuto();
+
+            // If images fail to load, show fallback text inside that slide
+            slides.forEach(slide => {
+                const img = slide.querySelector('img');
+                if (!img) return;
+                img.addEventListener('error', () => {
+                    img.style.display = 'none';
+                    if (!slide.querySelector('.img-fallback')) {
+                        const fallback = document.createElement('div');
+                        fallback.className = 'img-fallback';
+                        fallback.style = "display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(180deg,#fff,#f3f7ff);color:#3b4656;padding:12px;text-align:center;font-weight:600;";
+                        fallback.textContent = 'Image not available — check your local file paths or use relative paths.';
+                        slide.appendChild(fallback);
+                    }
+                }, {once:true});
+            });
+        })();
+    </script>
+</body>
+</html>
